@@ -56,7 +56,7 @@
                 opacity: 1;
                 transform: translateY(0);
             }
-
+        }
     </style>
 </head>
 <body>
@@ -81,14 +81,23 @@
         <iframe src="https://docs.google.com/spreadsheets/d/19zatRfWZtWANFkeNAd8BykuxiN8f0tx-blgdQghPqxE/edit#gid=2081337985"></iframe>
     </div>
 
-     <div id="CRM Dashboard" class="tab-content">
-        <iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/4153aa77-c3d3-4ad8-bd14-d2fa167e6b8a/page/HbH4D" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+    <div id="CRM Dashboard" class="tab-content">
+        <!-- Placeholder content -->
+        <p>Clicking this tab will open the CRM Dashboard in a new tab or redirect.</p>
     </div>
 
     <script>
         function openTab(evt, tabName) {
             var i, tabContent, tabButtons;
 
+            // Check if the tabName is "CRM Dashboard"
+            if (tabName === 'CRM Dashboard') {
+                // Perform redirection or open in new tab
+                window.open('https://lookerstudio.google.com/embed/reporting/4153aa77-c3d3-4ad8-bd14-d2fa167e6b8a/page/HbH4D', '_blank');
+                return; // Return immediately to prevent further execution
+            }
+
+            // If not "CRM Dashboard", proceed with default tab switching behavior
             // Hide all tab content
             tabContent = document.getElementsByClassName("tab-content");
             for (i = 0; i < tabContent.length; i++) {
