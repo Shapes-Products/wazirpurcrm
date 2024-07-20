@@ -71,6 +71,7 @@
         <button class="tab-button" onclick="openTab(event, 'CRM Dashboard')">CRM Dashboard</button>
         <button class="tab-button" onclick="openTab(event, 'Inventory Management')">Inventory Management</button>
         <button class="tab-button" onclick="openTab(event, 'ALL MIS')">ALL MIS</button>
+        <button class="tab-button" onclick="openTab(event, 'MyChatBot')">MyChatBot</button>
         
     </div>
 
@@ -93,6 +94,10 @@
     <div id="ALL MIS" class="tab-content">
         <iframe src="https://lookerstudio.google.com/embed/reporting/5503e22e-2e2b-430d-91b8-5f02884c3784/page/iIa5D"></iframe>
     </div>
+
+    <div id="MyChatBot" class="tab-content">
+        <iframe src="https://shapes-products.github.io/crmchatbot/"></iframe>
+    </div>
     
     <div id="CRM Dashboard" class="tab-content">
         <!-- Placeholder content -->
@@ -102,38 +107,46 @@
     <script>
         function openTab(evt, tabName) {
             var i, tabContent, tabButtons;
-
+    
             // Check if the tabName is "CRM Dashboard"
             if (tabName === 'CRM Dashboard') {
                 // Perform redirection or open in new tab
                 window.open('https://shapes-products.github.io/crmdashboard/', '_blank');
                 return; // Return immediately to prevent further execution
             }
-
+    
+            // Check if the tabName is "MyChatBot"
+            if (tabName === 'MyChatBot') {
+                // Perform redirection or open in new tab
+                window.open('https://shapes-products.github.io/crmchatbot/', '_blank');
+                return; // Return immediately to prevent further execution
+            }
+    
             // Check if the tabName is "ALL MIS"
             if (tabName === 'ALL MIS') {
                 // Open "ALL MIS" in a new tab
                 window.open('https://lookerstudio.google.com/embed/reporting/5503e22e-2e2b-430d-91b8-5f02884c3784/page/iIa5D', '_blank');
                 return; // Return immediately to prevent further execution
             }
-
-            // If not "CRM Dashboard" or "ALL MIS", proceed with default tab switching behavior
+    
+            // If not "CRM Dashboard" or "MyChatBot" or "ALL MIS", proceed with default tab switching behavior
             // Hide all tab content
             tabContent = document.getElementsByClassName("tab-content");
             for (i = 0; i < tabContent.length; i++) {
                 tabContent[i].style.display = "none";
             }
-
+    
             // Deactivate all tab buttons
             tabButtons = document.getElementsByClassName("tab-button");
             for (i = 0; i < tabButtons.length; i++) {
                 tabButtons[i].className = tabButtons[i].className.replace(" active", "");
             }
-
+    
             // Show the clicked tab content and activate the button
             document.getElementById(tabName).style.display = "block";
             evt.currentTarget.className += " active";
         }
     </script>
+    
 </body>
 </html>
