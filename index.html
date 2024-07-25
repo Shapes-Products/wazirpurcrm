@@ -59,6 +59,31 @@
             }
         }
 
+        /* Submenu styling */
+        .submenu {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .tab-button:hover .submenu {
+            display: block;
+        }
+
+        .submenu a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .submenu a:hover {
+            background-color: #ddd;
+        }
+
     </style>
 </head>
 <body>
@@ -68,7 +93,12 @@
         <button class="tab-button" onclick="openTab(event, 'Pipeline')">Pipeline</button>
         <button class="tab-button" onclick="openTab(event, 'ReportFilter')">ReportFilter</button>
         <button class="tab-button" onclick="openTab(event, 'Old Club Data')">Old Club Data</button>
-        <button class="tab-button" onclick="openTab(event, 'CRM Dashboard')">CRM Dashboard</button>
+        <button class="tab-button" onclick="openTab(event, 'CRM')">CRM
+            <div class="submenu">
+                <a href="https://lookerstudio.google.com/embed/reporting/4153aa77-c3d3-4ad8-bd14-d2fa167e6b8a/page/HbH4D" target="_blank">Domestic</a>
+                <a href="https://lookerstudio.google.com/embed/reporting/737f043d-54fe-4b0d-bbfe-36609a998544/page/CrfeD" target="_blank">Export</a>
+            </div>
+        </button>
         <button class="tab-button" onclick="openTab(event, 'Inventory Management')">Inventory Management</button>
         <button class="tab-button" onclick="openTab(event, 'ALL MIS')">ALL MIS</button>
         <button class="tab-button" onclick="openTab(event, 'MyChatBot')">MyChatBot</button>
@@ -99,37 +129,23 @@
         <iframe src="https://shapes-products.github.io/crmchatbot/"></iframe>
     </div>
     
-    <div id="CRM Dashboard" class="tab-content">
+    <div id="CRM" class="tab-content">
         <!-- Placeholder content -->
-        <p>Clicking this tab will open the CRM Dashboard in a new tab or redirect.</p>
+        <p>Clicking this tab will open the CRM Dashboard submenu options.</p>
     </div>
 
     <script>
         function openTab(evt, tabName) {
             var i, tabContent, tabButtons;
     
-            // Check if the tabName is "CRM Dashboard"
-            if (tabName === 'CRM Dashboard') {
-                // Perform redirection or open in new tab
-                window.open('https://shapes-products.github.io/crmdashboard/', '_blank');
-                return; // Return immediately to prevent further execution
+            // Check if the tabName is "CRM"
+            if (tabName === 'CRM') {
+                // Do nothing here because submenu handles the navigation
+                return;
             }
     
-            // Check if the tabName is "MyChatBot"
-            if (tabName === 'MyChatBot') {
-                // Perform redirection or open in new tab
-                window.open('https://shapes-products.github.io/crmchatbot/', '_blank');
-                return; // Return immediately to prevent further execution
-            }
+            // If not "CRM", proceed with default tab switching behavior
     
-            // Check if the tabName is "ALL MIS"
-            if (tabName === 'ALL MIS') {
-                // Open "ALL MIS" in a new tab
-                window.open('https://lookerstudio.google.com/embed/reporting/5503e22e-2e2b-430d-91b8-5f02884c3784/page/iIa5D', '_blank');
-                return; // Return immediately to prevent further execution
-            }
-    
-            // If not "CRM Dashboard" or "MyChatBot" or "ALL MIS", proceed with default tab switching behavior
             // Hide all tab content
             tabContent = document.getElementsByClassName("tab-content");
             for (i = 0; i < tabContent.length; i++) {
