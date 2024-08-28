@@ -151,6 +151,40 @@
             cursor: pointer;
             font-size: 16px;
         }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            float: right; /* Add this line */
+        }   
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .emdashboard {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            float: right; /* Add this line */
+        }
+
+        .emdashboard:hover{
+            background-color: blueviolet;
+        }
+
     </style>
 </head>
 <body>
@@ -159,7 +193,8 @@
         <button class="tab-button" onclick="openTab(event, 'ReportFilter')">ReportFilter</button>
         <button class="tab-button" onclick="openTab(event, 'Old Club Data')">Old Club Data</button>
         <button class="tab-button" onclick="toggleCRMSubMenu()">CRM DASHBOARD</button>
-        <button class="tab-button" onclick="openTab(event, 'Inventory Management')">Inventory Management</button>
+        <button class="tab-button" onclick="openTab(event, 'Inventory Management')">Inventory Management(WZ)</button>
+        <button class="tab-button" onclick="openTab(event, 'EM Dashboard')">EM Dashboard Weekly</button>
         <button class="tab-button" onclick="openTab(event, 'ALL MIS')">ALL MIS</button>
         <button class="tab-button" onclick="openTab(event, 'MyChatBot')">MyChatBot</button>
     </div>
@@ -176,11 +211,18 @@
         <iframe src="https://docs.google.com/spreadsheets/d/19zatRfWZtWANFkeNAd8BykuxiN8f0tx-blgdQghPqxE/edit#gid=2081337985"></iframe>
     </div>
 
-   <div id="Inventory Management" class="tab-content">
-    <button onclick="window.location.href='https://docs.google.com/spreadsheets/d/1hHQo9o4SePTUp-fMZeR-IiMyqI09U4e1p3LoHKzetDk/edit#gid=1449552286';">
-        Open Inventory Spreadsheet
-    </button>
+    <div id="Inventory Management" class="tab-content">
+        <a href="https://docs.google.com/spreadsheets/d/1hHQo9o4SePTUp-fMZeR-IiMyqI09U4e1p3LoHKzetDk/edit#gid=1449552286" class="button" target="_blank">
+            Click Here to Open Inventory Spreadsheet
+        </a>
     </div>
+
+    <div id="EM Dashboard" class="tab-content">
+        <a href="https://lookerstudio.google.com/embed/reporting/901c7a61-a202-4764-abf6-a2eb2e5df617/page/mO79D" class="emdashboard" target="_blank">
+            Click Here to Open Weekly EM DB
+        </a>
+    </div>
+    
     
     <div id="ALL MIS" class="tab-content">
         <iframe src="https://lookerstudio.google.com/embed/reporting/5503e22e-2e2b-430d-91b8-5f02884c3784/page/iIa5D"></iframe>
